@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".WelCome"
+    android:background="@drawable/welcome">
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Welcome"
+    android:textSize="40sp"
+    android:textAlignment="center"
+    android:id="@+id/welcomeTxt"
+    android:layout_marginTop="200dp"
+    android:textStyle="bold"
+    />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/welcomeTxt"
+        android:text="Here are your details "
+        android:textSize="25sp"
+        android:layout_marginTop="70dp"
+        android:layout_marginLeft="10dp"
+        android:id="@+id/detailTxt"
+
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/detailTxt"
+        android:text="Email:"
+        android:textSize="20sp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="20dp"
+        android:id="@+id/emailTxt"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/emailTxt"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        android:text="Unique id:"
+        android:textSize="20sp"
+        android:layout_marginTop="30dp"
+        android:id="@+id/uniqueIdTxt"/>
+</RelativeLayout>

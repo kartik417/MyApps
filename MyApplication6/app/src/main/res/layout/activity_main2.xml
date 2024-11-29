@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="300dp"
-        android:id="@+id/emailLayout1"
+        android:id="@+id/userIdLayout"
         android:layout_marginRight="30dp"
         android:layout_marginLeft="30dp"
         style="@style/ThemeOverlay.Material3.AutoCompleteTextView.OutlinedBox"
@@ -20,9 +20,9 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Enter your email"
-            android:inputType="textEmailAddress"
-            android:id="@+id/email1"/>
+            android:hint="Enter your user id"
+
+            android:id="@+id/userId"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -33,7 +33,7 @@
         android:id="@+id/passwordLayout1"
         android:layout_marginRight="30dp"
         android:layout_marginLeft="30dp"
-        android:layout_below="@id/emailLayout1"
+        android:layout_below="@id/userIdLayout"
         app:passwordToggleTint="@color/black"
         app:passwordToggleEnabled="true"
         style="@style/ThemeOverlay.Material3.AutoCompleteTextView.OutlinedBox"
@@ -41,8 +41,8 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Enter your email"
-            android:inputType="textEmailAddress"
+            android:hint="Enter your password"
+            android:inputType="textPassword"
             android:id="@+id/password1"/>
 
 
@@ -54,7 +54,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/passwordLayout1"
         android:backgroundTint="@color/yellow"
-        android:text="Sign-Up"
+        android:text="Sign-In"
         android:textColor="@color/black"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"

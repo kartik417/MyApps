@@ -14,7 +14,7 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 
 class SignUp : AppCompatActivity() {
-    lateinit var database: DatabaseReference
+    private lateinit var database: DatabaseReference
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -40,7 +40,7 @@ class SignUp : AppCompatActivity() {
             database = FirebaseDatabase.getInstance().getReference("Users")
             database.child(txtId).setValue(user).addOnSuccessListener {
                 Toast.makeText(this,"Signed Up Successfully",Toast.LENGTH_SHORT).show()
-            }.addOnSuccessListener {
+            }.addOnFailureListener() {
                 Toast.makeText(this,"Failed",Toast.LENGTH_SHORT).show()
             }
         }
