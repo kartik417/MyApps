@@ -1,5 +1,6 @@
 package com.example.recyclerview
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -12,7 +13,7 @@ import kotlin.collections.ArrayList
 
 class MainActivity : AppCompatActivity() {
     private lateinit var recyclerView : RecyclerView
-    lateinit var newsArrayList : ArrayList<News>
+    private lateinit var newsArrayList : ArrayList<News>
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -26,6 +27,16 @@ class MainActivity : AppCompatActivity() {
             "Belarusian leader Lukashenko visits China amid Ukraine tensions",
             "China rips new U.S. House committee on countering Beijing",
             "Largest gathering of Foreign Ministers hosted by any G20 presidency: Foreign Secretary Vinay Kwatra")
+
+        val newContent = arrayOf(
+          getString(R.string.news_content),
+          getString(R.string.news_content),
+          getString(R.string.news_content),
+          getString(R.string.news_content),
+          getString(R.string.news_content),
+          getString(R.string.news_content),
+        )
+
         recyclerView.layoutManager = LinearLayoutManager(this)
         newsArrayList = ArrayList<News>()
         val newsImage = intArrayOf(R.drawable.news0,
@@ -36,11 +47,21 @@ class MainActivity : AppCompatActivity() {
             R.drawable.news5)
 
         for(index in newsImage.indices){
-            val newsItem = News(newsHeading[index],newsImage[index])
+            val newsItem = News(newsHeading[index],newsImage[index],newContent[index])
             newsArrayList.add(newsItem)
         }
-        val adapter = MyAdapter(this,newsArrayList)
-        recyclerView.adapter = adapter
+        var myAdapter = MyAdapter(this,newsArrayList)
+        recyclerView.adapter = myAdapter
+        myAdapter.setOnItemClickListener(object : MyAdapter.onItemClickListener{
+            override fun onItemClicking(position: Int) {
+                val intent = Intent(this@MainActivity,NewsDetails::class.java)
+                intent.putExtra("heading",newsHeading[position])
+                intent.putExtra("imgId",newsImage[position])
+                intent.putExtra("newsContent",newContent[position])
+                startActivity(intent)
+            }
+
+        })
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
