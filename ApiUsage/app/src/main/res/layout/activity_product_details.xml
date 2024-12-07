@@ -1,10 +1,133 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ProductDetails">
+    tools:context=".ProductDetails"
+    android:background="@mipmap/background">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <ImageView
+        android:id="@+id/productImageLarge"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_marginLeft="51dp"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/ic_launcher_background" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Essence Mascara Lash Princess"
+            android:id="@+id/titleTextView"
+            android:layout_below="@id/productImageLarge"
+            android:layout_centerInParent="true"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="3dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/titleTextView"
+            android:id="@+id/descriptionTextView"
+            android:text="The Essence Mascara Lash Princess is a popular mascara known for its volumizing and lengthening effects. Achieve dramatic lashes with this long-lasting and cruelty-free formula"
+            android:layout_marginTop="10dp"
+            android:textAlignment="center"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:layout_marginBottom="3dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/categoryTextView"
+                android:layout_below="@id/descriptionTextView"
+                android:text="Category: Face"
+                android:layout_marginTop="15dp"
+                android:textAlignment="center"
+                android:textSize="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="3dp"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/priceTextView"
+                android:layout_below="@id/categoryTextView"
+                android:text="Price: Rs. "
+                android:layout_marginLeft="20dp"
+                android:textSize="20sp"
+                android:layout_marginBottom="3dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/discountTextView"
+                android:layout_below="@id/priceTextView"
+                android:layout_marginLeft="20dp"
+                android:text="Discount: "
+                android:textSize="20sp"
+                android:layout_marginBottom="3dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/ratingTextView"
+                android:layout_below="@id/brandTextView"
+                android:text="Rating: "
+                android:layout_marginLeft="200dp"
+                android:textSize="20dp"
+                android:layout_marginBottom="3dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/stockTextView"
+                android:layout_below="@id/descriptionTextView"
+                android:layout_marginLeft="200dp"
+                android:layout_marginTop="15dp"
+                android:textSize="20dp"
+                android:text="Stock: "
+                android:layout_marginBottom="3dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/stockTextView"
+                    android:id="@+id/brandTextView"
+                    android:text="Brand: "
+                    android:layout_marginLeft="200dp"
+                    android:textSize="20dp"
+                    android:layout_marginBottom="3dp"
+                    />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:text="Add to cart"
+                android:id="@+id/btnAddToCart"
+               android:paddingRight="70dp"
+                android:paddingLeft="70dp"
+                />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:text="Buy Now"
+                android:id="@+id/btnBuyNow"
+                android:paddingRight="72dp"
+                android:paddingLeft="72dp"
+                />
+
+
+
+
+
+
+
+</RelativeLayout>

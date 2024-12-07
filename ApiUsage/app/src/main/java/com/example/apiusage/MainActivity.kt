@@ -1,5 +1,6 @@
 package com.example.apiusage
 
+import android.content.Intent
 import android.graphics.pdf.models.ListItem
 import android.os.Bundle
 import android.util.Log
@@ -40,6 +41,25 @@ class MainActivity : AppCompatActivity() {
                myAdapter = MyAdapter(this@MainActivity, productsData)
                 recyclerView.adapter = myAdapter
                 recyclerView.layoutManager = LinearLayoutManager(this@MainActivity)
+                myAdapter.setOnItemClickListner(object : MyAdapter.onSetItemClickListner {
+                    override fun onItemClick(position: Int) {
+
+
+
+                        val intent = Intent(this@MainActivity, ProductDetails::class.java)
+                        intent.putExtra("title", productsData[position].title)
+                        intent.putExtra("description",productsData[position].description)
+                        intent.putExtra("category",productsData[position].category)
+                        intent.putExtra("price",productsData[position].price)
+                        intent.putExtra("discount",productsData[position].discountPercentage)
+                        intent.putExtra("rating",productsData[position].rating)
+                        intent.putExtra("stock",productsData[position].stock)
+                        intent.putExtra("brand",productsData[position].brand)
+                        intent.putExtra("thumbnail",productsData[position].thumbnail)
+
+                        startActivity(intent)
+                    }
+                })
 
 
             }
