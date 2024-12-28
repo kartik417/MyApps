@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "527504043316",
+    "project_id": "messgenger-7eb80",
+    "storage_bucket": "messgenger-7eb80.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:527504043316:android:003b3f2cc2b9a55f394961",
+        "android_client_info": {
+          "package_name": "com.example.messgenger"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB-zrUr0UD8-PMu0DWEoYdkndTDhECdYjQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
